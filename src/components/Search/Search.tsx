@@ -15,9 +15,13 @@ const SearchStyle = styled.div`
   }
   input {
     padding: 1rem 2rem;
-    background-color: #d9d9d9;
-    opacity: 0.5;
+    background-color: rgb(217, 217, 217,0.2);
+    border:none;
     width: 90%;
+    color:#d9d9d9;
+  }
+  input:focus{
+    outline:none;
   }
   ::placeholder{
     color:#fff;
