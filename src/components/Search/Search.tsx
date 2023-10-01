@@ -44,10 +44,8 @@ const Search = () => {
   return (
     <SearchStyle>
       <h1>Registre o domínio certo para você</h1>
-      <input type="text" placeholder="Ex: maravista.com.br" />
-      <i>
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-      </i>
+      <input type="text" placeholder="Ex: maravista.com.br ou Maravista" id="input"/>
+      <i><FontAwesomeIcon icon={faMagnifyingGlass} /></i>
     </SearchStyle>
   );
 };

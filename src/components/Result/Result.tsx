@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 
+
 const ResultStyle = styled.section`
   background-color: rgb(234, 234, 234, 0.2);
   width: 90%;
@@ -38,24 +39,21 @@ const ResultStyle = styled.section`
   }
 `;
 
-const Result = () => {
+const Result = (props:any) => {
   return (
     <ResultStyle>
       <div className="status">
         <h3>Status:</h3>
-        <span>Registrado</span>
-        <p>
-          <span>Domínio:</span> brasilapi.com.br
-        </p>
+        <span className="statusName">{props.status}</span>
+        <p><span>Domínio: </span>{props.dominio}</p>
       </div>
       <div className="suggestion">
         <h3>Sugestão para você</h3>
         <div className="content">
-            <p>brasilapi.agr.br</p>
-            <p>brasilapi.app.br</p>
-            <p>brasilapi.art.br</p>
-            <p>brasilapi.eco.br</p>
-            <p>brasilapi.esp.br</p>
+            <p>{props.suggestions1}</p>
+            <p>{props.suggestions2}</p>
+            <p>{props.suggestions3}</p>
+            <p>{props.suggestions4}</p>
         </div>
       </div>
     </ResultStyle>
