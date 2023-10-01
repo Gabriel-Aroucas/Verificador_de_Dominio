@@ -67,9 +67,9 @@ function App() {
   return (
     <>
       <Header />
-      <i onClick={api}>
+      <span onClick={api}>
         <Search />
-      </i>
+      </span>
       <Result
         status={status}
         dominio={dominio}
