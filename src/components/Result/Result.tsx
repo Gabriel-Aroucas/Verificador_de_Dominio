@@ -7,6 +7,8 @@ const ResultStyle = styled.section`
   margin: 20px auto;
   text-align: center;
   padding:1rem;
+  display: none;
+  opacity: 0;
   h3,
   p {
     color: #fff;
@@ -44,7 +46,7 @@ const ResultStyle = styled.section`
 
 const Result = (props:any) => {
   return (
-    <ResultStyle>
+    <ResultStyle className="resultstyle">
       <div className="status">
         <h3>Status:</h3>
         <span className="statusName">{props.status}</span>

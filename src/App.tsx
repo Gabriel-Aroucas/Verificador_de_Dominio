@@ -20,10 +20,17 @@ function App() {
     const input = document.querySelector("#input") as HTMLInputElement;
     const suggestion = document.querySelector(".suggestion") as HTMLElement;
     const status = document.querySelector(".statusName") as HTMLElement;
+    const resultstyle = document.querySelector(".resultstyle") as HTMLElement;
 
     axios
       .get(`https://brasilapi.com.br/api/registrobr/v1/${input.value}`)
       .then((response) => {
+        
+        resultstyle.style.display='block';
+        setTimeout(() => {
+        resultstyle.style.opacity='1';
+        }, 300);
+
 
         if (response.data.status == "AVAILABLE") {
           setstatus("Disponível");
