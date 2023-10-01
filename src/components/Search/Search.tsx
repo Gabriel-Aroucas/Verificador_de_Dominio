@@ -4,6 +4,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const SearchStyle = styled.div`
   text-align: center;
+  margin-top: 80px;
   h1 {
     font-size: 25px;
     text-align: center;
@@ -25,6 +26,7 @@ const SearchStyle = styled.div`
   }
   ::placeholder{
     color:#fff;
+    opacity: 0.4;
   }
   i {
     position: absolute;

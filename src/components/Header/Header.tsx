@@ -4,8 +4,11 @@ const HeaderStyle = styled.header`
 display: flex;
 justify-content: space-between;
 padding: 1rem;
-background-color: rgb(234, 234, 234,0.5);
+background-color: rgb(234, 234, 234,0.2);
 border-radius: 0 0 10px 10px;
+position:fixed;
+width: 100%;
+top:0;
 
 h1{
   text-transform: uppercase;
