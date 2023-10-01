@@ -21,6 +21,12 @@ const AboutStyle = styled.section`
     text-align:center;
     padding:1rem
   }
+
+  @media only screen and (min-width: 550px){
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
 `;
 
 const About = () => {

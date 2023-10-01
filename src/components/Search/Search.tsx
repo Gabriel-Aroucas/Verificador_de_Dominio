@@ -38,6 +38,16 @@ const SearchStyle = styled.div`
     color:#868181;
     cursor:pointer;
   }
+
+  @media only screen and (min-width:550px){
+    input{
+      width:30%
+    }
+    i{
+      left:62%
+    }
+    
+  }
 `;
 
 const Search = () => {

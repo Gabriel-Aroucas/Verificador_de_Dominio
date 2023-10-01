@@ -18,6 +18,13 @@ color:#fff;
         color:#fff;
     }
 }
+
+@media only screen and (min-width: 550px){
+    font-size: 6px;
+    .icon{
+        font-size: 1rem;
+    }
+}
 `
 const SocialMedia = ()=>{
     return(

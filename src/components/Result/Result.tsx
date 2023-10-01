@@ -37,6 +37,9 @@ const ResultStyle = styled.section`
         text-decoration:underline;
     }
   }
+  @media only screen and (min-width: 550px){
+    width:30%;
+  }
 `;
 
 const Result = (props:any) => {
