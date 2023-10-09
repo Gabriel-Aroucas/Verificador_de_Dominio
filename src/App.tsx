@@ -26,22 +26,29 @@ function App() {
       .get(`https://brasilapi.com.br/api/registrobr/v1/${input.value}`)
       .then((response) => {
         
+        console.log(response)
+        const data = {
+          status : response.data.status,
+          dominio: response.data.fqdn,
+          suggestions: response.data.suggestions,
+        }
+
         resultstyle.style.display='block';
         setTimeout(() => {
         resultstyle.style.opacity='1';
         }, 300);
 
 
-        if (response.data.status == "AVAILABLE") {
+        if (data.status == "AVAILABLE") {
           setstatus("Disponível");
-          setdominio(response.data.fqdn);
+          setdominio(data.dominio);
           status.style.color = "#64ccc5";
           suggestion.style.display = "none";
         
         } else {
         
           setstatus("REGISTRADO");
-          setdominio(response.data.fqdn);
+          setdominio(data.dominio);
           status.style.color = "#cc6464";
           suggestion.style.display = "block";
           setinputvalue(
@@ -56,10 +63,10 @@ function App() {
 
 
           const random = Math.floor(Math.random() * 21);
-          setsuggest(response.data.suggestions[random]);
-          setsuggest2(response.data.suggestions[random + 2]);
-          setsuggest3(response.data.suggestions[random + 3]);
-          setsuggest4(response.data.suggestions[random + 4]);
+          setsuggest(data.suggestions[random]);
+          setsuggest2(data.suggestions[random + 2]);
+          setsuggest3(data.suggestions[random + 3]);
+          setsuggest4(data.suggestions[random + 4]);
         }
       });
   };
