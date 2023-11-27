@@ -6,6 +6,7 @@ import SocialMedia from "./components/SocialMedia/SocialMedia";
 import "./App.css";
 import axios from "axios";
 import { useState } from "react";
+import Loader from "./components/Loader/Loader";
 
 function App() {
   const [status, setstatus] = useState("");
@@ -15,8 +16,10 @@ function App() {
   const [suggest2, setsuggest2] = useState("");
   const [suggest3, setsuggest3] = useState("");
   const [suggest4, setsuggest4] = useState("");
+  const [remove_loader, set_remove_loader] = useState(true)
 
   const api = () => {
+    set_remove_loader(false)
     const input = document.querySelector("#input") as HTMLInputElement;
     const suggestion = document.querySelector(".suggestion") as HTMLElement;
     const status = document.querySelector(".statusName") as HTMLElement;
@@ -68,7 +71,11 @@ function App() {
           setsuggest3(data.suggestions[random + 3]);
           setsuggest4(data.suggestions[random + 4]);
         }
-      });
+        set_remove_loader(true)
+      })
+      .catch(()=>{
+        set_remove_loader(true)
+      })
   };
 
   return (
@@ -87,6 +94,7 @@ function App() {
       />
       <About />
       <SocialMedia />
+      {!remove_loader && <Loader/>}
     </>
   );
 }
